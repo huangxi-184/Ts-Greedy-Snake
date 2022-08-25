@@ -19,7 +19,7 @@ class Snake {
         return this.head.offsetTop;
     }
     //  设坐标
-    set x(value:number) {
+    set x(value: number) {
         if (this.x === value)
             return;
         if (value < 0 || value > 200) {
@@ -27,7 +27,7 @@ class Snake {
         }
         this.head.style.left = value + 'px'
     }
-    set y(value:number) {
+    set y(value: number) {
         if (this.y === value)
             return
         if (value < 0 || value > 200) {
