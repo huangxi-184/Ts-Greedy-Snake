@@ -19,10 +19,20 @@ class Snake {
         return this.head.offsetTop;
     }
     //  设坐标
-    set x(value) {
+    set x(value:number) {
+        if (this.x === value)
+            return;
+        if (value < 0 || value > 200) {
+            throw new Error('蛇撞墙了')
+        }
         this.head.style.left = value + 'px'
     }
-    set y(value) {
+    set y(value:number) {
+        if (this.y === value)
+            return
+        if (value < 0 || value > 200) {
+            throw new Error('蛇撞墙了')
+        }
         this.head.style.top = value + 'px'
     }
     // 增加蛇身长度
@@ -31,3 +41,5 @@ class Snake {
     }
 
 }
+
+export default Snake
