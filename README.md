@@ -29,3 +29,7 @@
         }
 ```
  给蛇配置和底色一样的边框就看不出来了 还可以保证不连在一起 保证了蛇的大小为10px 不动
+
+
+ ! 表示不可能为空
+ `this.elemnet = document.getElementById('food')!`
