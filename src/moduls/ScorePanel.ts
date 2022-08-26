@@ -6,9 +6,9 @@ class ScorePanel {
     scoreEle: HTMLElement;
     levelEle: HTMLElement;
 
-    maxlevel: number;
-    Upscore: number;
-    constructor(maxlevel = 10, upScore = 3) {
+    maxlevel: number;   //最大等级
+    Upscore: number; // 每级经验数
+    constructor(maxlevel = 10, upScore = 2) {
         this.scoreEle = document.getElementById('score')!;
         this.levelEle = document.getElementById('level')!;
         this.maxlevel = maxlevel
@@ -18,7 +18,7 @@ class ScorePanel {
     //加分方法
     addScore() {
         this.score++;
-        // span 标签需要一个字符串来表示 
+        // span 标签需要一个字符串来表示  隐形转化成字符串
         this.scoreEle.innerHTML = this.score + '';
         // 每多少分升级
         if (this.score % this.Upscore === 0) {
@@ -31,8 +31,6 @@ class ScorePanel {
             this.level++
             this.levelEle.innerHTML = this.level + '';
         }
-
-
     }
 
 }
