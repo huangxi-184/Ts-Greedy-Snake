@@ -22,9 +22,12 @@ class Snake {
     set x(value: number) {
         if (this.x === value)
             return;
+        // 撞墙的范围判断
         if (value < 0 || value > 290) {
             throw new Error('蛇撞墙了')
         }
+        // 修正坐标方向 保证不会原地掉头
+        // 第二个节点存在,且它的坐标和头相同则说明相等
         if (this.bodies[1] && (this.bodies[1] as HTMLElement).offsetLeft === value) {
             if (value > this.x) {
                 value = this.x - 10
@@ -51,7 +54,6 @@ class Snake {
                 value = this.y + 10
             }
         }
-
         this.moveBody();
         this.head.style.top = value + 'px';
         this.checkheadBody()
