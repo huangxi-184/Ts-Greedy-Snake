@@ -31,14 +31,15 @@ class GameControl {
         let y = this.snake.y;
         // 根据方向取方向
         switch (this.direction) {
-            case 'ArrowUp': y = y - 10
+            case 'ArrowUp' || "KeyW": y = y - 10
                 break;
-            case 'ArrowDown': y = y + 10
+            case 'ArrowDown' || "KeyS": y = y + 10
                 break;
-            case 'ArrowLeft': x = x - 10
+            case 'ArrowLeft' || "KeyA": x = x - 10
                 break;
-            case 'ArrowRight': x = x + 10
+            case 'ArrowRight' || "Key": x = x + 10
                 break;
+
         }
         // 判断是否吃到食物
         this.checkEat(x, y)
@@ -47,7 +48,7 @@ class GameControl {
             this.snake.x = x
             this.snake.y = y
         } catch (e: any) {
-            alert(e.message + ' GAME OVER');
+            alert('GAME OVER');
             this.isLive = false
         }
 

@@ -8,7 +8,7 @@ class ScorePanel {
 
     maxlevel: number;   //最大等级
     Upscore: number; // 每级经验数
-    constructor(maxlevel = 10, upScore = 2) {
+    constructor(maxlevel = 20, upScore = 3) {
         this.scoreEle = document.getElementById('score')!;
         this.levelEle = document.getElementById('level')!;
         this.maxlevel = maxlevel
@@ -30,6 +30,9 @@ class ScorePanel {
         if (this.level < this.maxlevel) {
             this.level++
             this.levelEle.innerHTML = this.level + '';
+        }
+        else {
+            this.levelEle.innerHTML = "Max"
         }
     }
 

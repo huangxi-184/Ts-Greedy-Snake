@@ -27,7 +27,7 @@ class Snake {
             throw new Error('蛇撞墙了')
         }
         // 修正坐标方向 保证不会原地掉头
-        // 第二个节点存在,且它的坐标和头相同则说明相等
+        // 第二个节点存在,且它的坐标和头相同则说明相等 是不够合理的 只有一节时可以随意走动
         if (this.bodies[1] && (this.bodies[1] as HTMLElement).offsetLeft === value) {
             if (value > this.x) {
                 value = this.x - 10

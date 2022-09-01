@@ -20,9 +20,11 @@ class Food {
     change() {
         // 生成随机的位置 需要知道坐标的范围 
         // x最小 0 最大是290 为了保证位置的判断 所以食物位置必须10的整数倍
-        // 去除食物刷新沿边墙问题
+        // 去除食物刷新沿边墙问题 
+        //但是 会出现在蛇的身上需要进一步判断,去除掉在身上生成
         let left = (Math.round(Math.random() * 27) + 1) * 10
         let top = (Math.round(Math.random() * 27) + 1) * 10
+        if(true)
         // 赋给食物 给与刷新
         this.element.style.left = left + 'px';
         this.element.style.top = top + 'px';
